@@ -5,18 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuillModule } from 'ngx-quill';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CkeComponent } from './component/cke/cke.component';
+import { QuillComponent } from './component/quill/quill.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CkeComponent,
+    QuillComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    QuillModule.forRoot(),
+    CKEditorModule,
+    QuillModule.forRoot(),  
   ],
   providers: [],
   bootstrap: [AppComponent]

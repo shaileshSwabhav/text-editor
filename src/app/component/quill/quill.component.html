@@ -1,0 +1,85 @@
+<h1>Simple Quill Editor</h1>
+<br>
+<br>
+
+
+<quill-editor #editor [styles]="quillEditorStyle" [modules]="quillModuleConfig"
+  (onContentChanged)="onContentChanged($event)" [(ngModel)]="htmlString">
+</quill-editor>
+
+<!-- <quill-view-html [content]="htmlString"></quill-view-html> -->
+
+<br>
+
+<!-- <quill-editor>
+  <div quill-editor-toolbar>
+    <span class="ql-formats">
+      <select class="ql-font">
+        <option selected></option>
+        <option value="serif"></option>
+        <option value="monospace"></option>
+      </select>
+      <select class="ql-size">
+        <option value="small"></option>
+        <option selected></option>
+        <option value="large"></option>
+        <option value="huge"></option>
+      </select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+    </span>
+    <span class="ql-formats">
+      <select class="ql-color"></select>
+      <select class="ql-background"></select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-list" value="ordered"></button>
+      <button class="ql-list" value="bullet"></button>
+      <select class="ql-align">
+        <option selected></option>
+        <option value="center"></option>
+        <option value="right"></option>
+        <option value="justify"></option>
+      </select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-link"></button>
+      <button class="ql-image"></button>
+    </span>
+  </div>
+</quill-editor> -->
+
+<br>
+
+<button (click)="openModal(imageURLModal)">Open Modal</button>
+
+<ng-template #imageURLModal let-modal>
+
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- Modal Body -->
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+    mollit anim id est laborum.
+  </div>
+
+  <!-- Modal Footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+
+</ng-template>
