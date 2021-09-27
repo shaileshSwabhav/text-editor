@@ -8,8 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CkeComponent } from './component/cke/cke.component';
 import { QuillComponent } from './component/quill/quill.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CommonModule } from '@angular/common';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    CKEditorModule,
+    CKEditorModule ,
     QuillModule.forRoot(),  
   ],
   providers: [],

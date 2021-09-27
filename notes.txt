@@ -1,0 +1,13 @@
+Note that to allow importing JavaScript files without providing their corresponding 
+types you need to set allowJs to true in the tsconfig.json file. Also, make sure that 
+you target ES6 or higher, otherwise you are likely to end up with a weird 
+transpilation error in the production build.
+
+"compilerOptions": {
+    "allowJs": true,
+    "target": "es2015"
+    // other options
+}
+
+If you cannot set the target higher than es5, try to set "buildOptimizer": false 
+which will produce a bigger, but correct production build.
