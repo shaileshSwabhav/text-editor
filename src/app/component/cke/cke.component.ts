@@ -34,6 +34,7 @@ export class CkeComponent implements OnInit {
 			toolbarGroups: [
 				{ name: 'styles' },
 				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+				{ name: 'codeTag' },
 				{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
 				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 				{ name: 'links' },
@@ -46,7 +47,9 @@ export class CkeComponent implements OnInit {
 				// { name: 'tools' },
 				// { name: 'others' },
 			],
-			removeButtons: ""
+			removeButtons: "",
+			extraPlugins: 'codeTag',
+			allowedContent: 'pre[*]{*}(*)',
 		}
 	}
 
