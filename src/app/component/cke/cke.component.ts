@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-cke',
@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CkeComponent implements OnInit {
 
-  editor:any
 	ckConfig: any
+
+  @ViewChild("ckeditor") ckeditor: any;
+
   constructor() {
 	  // this.editor = Editor
 		// this.editorConfig5()
@@ -17,11 +19,14 @@ export class CkeComponent implements OnInit {
 
 	editorConfig4(): void {
 		this.ckConfig = {
+			extraPlugins: 'codeTag',
+			// stylesSet: 'new_styles',
 			toolbar: [
 				{ name: 'styles', items: [ 'Styles', 'Format' ] },
 				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], 
-					items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'RemoveFormat' ] },
-				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
+					items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'RemoveFormat', 'Code' ] },
+				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], 
+					items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
 				{ name: 'links', items: [ 'Link', 'Unlink' ] }, //, 'Anchor'
 				{ name: 'insert', items: [ 'Image' ] }, //, 'Table', 'HorizontalRule'
 				{ name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source' ] },
@@ -34,7 +39,6 @@ export class CkeComponent implements OnInit {
 			toolbarGroups: [
 				{ name: 'styles' },
 				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-				{ name: 'codeTag' },
 				{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
 				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 				{ name: 'links' },
@@ -48,56 +52,12 @@ export class CkeComponent implements OnInit {
 				// { name: 'others' },
 			],
 			removeButtons: "",
-			extraPlugins: 'codeTag',
-			allowedContent: 'pre[*]{*}(*)',
-		}
-	}
-
-	editorConfig5(): void {
-		this.ckConfig = {
-			toolbar: {
-				items: [
-					'heading', 
-					'|',
-					'bold',
-					'italic',
-					'underline',
-					'link',
-					'bulletedList',
-					'numberedList',
-					'|',
-					'indent',
-					'outdent',
-					'|',
-					'uploadimage',
-					'blockQuote',
-					'insertTable',
-					'undo',
-					'redo',
-				]
-			},
-			image: {
-				toolbar: [
-					// 'imageStyle:full',
-					'imageStyle:side',
-					'|',
-					'imageTextAlternative'
-				]
-			},
-			table: {
-				contentToolbar: [
-					'tableColumn',
-					'tableRow',
-					'mergeTableCells'
-				]
-			},
-			extraPlugins: 'uploadimage',
+			language: 'en',
+			forcePasteAsPlainText: false,
 			ckfinder: {
 				// Upload the images to the server using the CKFinder QuickUpload command.
 				uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
 			},
-			// uploadUrl:
-			// 	'https://ckeditor.com/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
 			// Configure your file manager integration. This example uses CKFinder 3 for PHP.
 			filebrowserBrowseUrl:
 				'https://ckeditor.com/apps/ckfinder/3.4.5/ckfinder.html',
@@ -107,9 +67,7 @@ export class CkeComponent implements OnInit {
 				'https://ckeditor.com/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files',
 			filebrowserImageUploadUrl:
 				'https://ckeditor.com/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Images',
-			// This value must be kept in sync with the language defined in webpack.config.js.
-			language: 'en'
-		};
+		}
 	}
 
   ngOnInit(): void {
