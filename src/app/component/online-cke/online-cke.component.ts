@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CkeComponent } from '../cke/cke.component';
 import * as customEditor from './ckeditor';
 
 @Component({
@@ -7,6 +8,10 @@ import * as customEditor from './ckeditor';
   styleUrls: ['./online-cke.component.css']
 })
 export class OnlineCkeComponent implements OnInit {
+
+
+  @Input() ck: CkeComponent
+
   public Editor = customEditor;
 
   config: any

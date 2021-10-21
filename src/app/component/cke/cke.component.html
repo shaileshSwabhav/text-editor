@@ -2,4 +2,10 @@
 <br>
 <br>
 
-<ckeditor [config]="ckConfig"></ckeditor>
+<ckeditor [config]="ckConfig1" [(ngModel)]="ckString"></ckeditor>
+
+<ckeditor [config]="ckConfig2"></ckeditor>
+
+<div [innerHTML]='ckString'></div>
+
+<!-- <button (click)="setToolbarPlugin()">Toggle toolbar</button> -->
