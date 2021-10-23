@@ -29,13 +29,13 @@ export class CkeComponent implements OnInit {
 
 	editorConfig4(): void {
 		this.ckConfig1 = {
-			extraPlugins: 'codeTag',
+			extraPlugins: 'codeTag,kbdTag',
 			removePlugins: "exportpdf",
 			// stylesSet: 'new_styles',
 			toolbar: [
-				{ name: 'styles', items: [ 'Styles', 'Format' ] },
+				// { name: 'styles', items: [ 'Styles', 'Format' ] },
 				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], 
-					items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'RemoveFormat', 'Code' ] },
+					items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'RemoveFormat', 'Code', 'Kbd' ] },
 				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], 
 					items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote' ] },
 				{ name: 'links', items: [ 'Link', 'Unlink' ] }, //, 'Anchor'
@@ -48,7 +48,7 @@ export class CkeComponent implements OnInit {
 				// { name: 'about', items: [ 'About' ] }
 			],
 			toolbarGroups: [
-				{ name: 'styles' },
+				// { name: 'styles' },
 				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 				{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
 				{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
